@@ -8,8 +8,8 @@ import ru.itsjava.service.*;
 public class AppConfig {
 
     @Bean
-    public BufferedReaderService bufferedReaderService(){
-        return new BufferedReaderServiceImpl();
+    public MenuReaderService bufferedReaderService(){
+        return new MenuReaderServiceImpl();
     }
 
     @Bean
@@ -18,7 +18,7 @@ public class AppConfig {
     }
 
     @Bean
-    public CoffeeService coffeeService(BufferedReaderService bufferedReaderService, ScannerService scannerService){
+    public CoffeeService coffeeService(MenuReaderService bufferedReaderService, ScannerService scannerService){
         return new CoffeeServiceImpl(bufferedReaderService, scannerService);
     }
 

@@ -6,7 +6,7 @@ import ru.itsjava.domain.Coffee;
 @RequiredArgsConstructor
 public class CoffeeServiceImpl implements CoffeeService{
 
-    private final BufferedReaderService bufferedReaderService;
+    private final MenuReaderService bufferedReaderService;
     private final ScannerService scannerService;
 
     @Override

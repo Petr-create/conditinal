@@ -2,16 +2,13 @@ package ru.itsjava.service;
 
 import lombok.SneakyThrows;
 
-import java.io.BufferedInputStream;
 import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.ObjectInputFilter.Config;
-import java.nio.file.Paths;
+import java.io.InputStreamReader;
 
 import static java.nio.file.Files.newBufferedReader;
 
 
-public class BufferedReaderServiceImpl implements BufferedReaderService{
+public class MenuReaderServiceImpl implements MenuReaderService {
 
     @Override
     @SneakyThrows
@@ -37,7 +34,7 @@ public class BufferedReaderServiceImpl implements BufferedReaderService{
 //            }
 //        } while (val > -1);
 //        System.out.println(txt);
-        BufferedReader br = new BufferedReader(BufferedReaderServiceImpl.class.getResourceAsStream(fileName));
+        BufferedReader br = new BufferedReader(new InputStreamReader(MenuReaderServiceImpl.class.getResourceAsStream(fileName)));
         String line;
         while((line = br.readLine()) != null){
             System.out.println(line);
