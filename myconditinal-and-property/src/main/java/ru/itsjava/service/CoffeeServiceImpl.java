@@ -11,7 +11,7 @@ public class CoffeeServiceImpl implements CoffeeService{
 
     @Override
     public void getCoffeeByPrice() {
-        bufferedReaderService.menuReader("src/main/resources/menu.txt");
+        bufferedReaderService.menuReader("myconditinal-and-property/src/main/resources/menu.txt");
         int price = scannerService.readPrice();
         Coffee coffee = null;
         if(price == 60){
@@ -25,6 +25,6 @@ public class CoffeeServiceImpl implements CoffeeService{
         }else{
             System.out.println("Такого кофе у нас нет!");
         }
-        System.out.println("Ваш выбор " + coffee);
+        System.out.println("Ваш выбор: " + coffee);
     }
 }
