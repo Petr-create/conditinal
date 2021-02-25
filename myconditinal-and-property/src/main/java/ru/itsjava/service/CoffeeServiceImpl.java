@@ -11,7 +11,7 @@ public class CoffeeServiceImpl implements CoffeeService{
 
     @Override
     public void getCoffeeByPrice() {
-        bufferedReaderService.menuReader("myconditinal-and-property/src/main/resources/menu.txt");
+        bufferedReaderService.menuReader("/menu.txt");
         int price = scannerService.readPrice();
         Coffee coffee = null;
         if(price == 60){
