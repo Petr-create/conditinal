@@ -21,15 +21,15 @@ public class AppConfig {
 
     @Bean
     @ConditionalOnMissingBean(ScannerService.class)
-    //@ConditionalOnScanner
-    @ConditionalOnProperty(value = "choosecoffee.choose", havingValue = "false")
+    @ConditionalOnScanner
+    //@ConditionalOnProperty(value = "choosecoffee.choose", havingValue = "false")
     public ScannerService scannerService(){
         return new ScannerServiceImpl();
     }
 
     @Bean
-    //@ConditionalOnMissingBean(ScannerService.class)
-    @ConditionalOnProperty(value = "choosecoffee.choose", havingValue = "true")
+    @ConditionalOnMissingBean(ScannerService.class)
+    //@ConditionalOnProperty(value = "choosecoffee.choose", havingValue = "true")
     public CoffeeService notChooseCoffee(){
         return new CoffeeBadServiceImpl();
     }
