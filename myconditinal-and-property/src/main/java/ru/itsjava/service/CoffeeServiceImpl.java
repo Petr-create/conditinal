@@ -6,12 +6,12 @@ import ru.itsjava.domain.Coffee;
 @RequiredArgsConstructor
 public class CoffeeServiceImpl implements CoffeeService{
 
-    private final BufferedReaderService bufferedReaderService;
+    private final MenuReaderService bufferedReaderService;
     private final ScannerService scannerService;
 
     @Override
     public void getCoffeeByPrice() {
-        bufferedReaderService.menuReader("src/main/resources/menu.txt");
+        bufferedReaderService.menuReader("/menu.txt");
         int price = scannerService.readPrice();
         Coffee coffee = null;
         if(price == 60){
@@ -25,6 +25,6 @@ public class CoffeeServiceImpl implements CoffeeService{
         }else{
             System.out.println("Такого кофе у нас нет!");
         }
-        System.out.println("Ваш выбор " + coffee);
+        System.out.println("Ваш выбор: " + coffee);
     }
 }

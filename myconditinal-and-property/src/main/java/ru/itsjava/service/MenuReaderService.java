@@ -1,5 +1,5 @@
 package ru.itsjava.service;
 
-public interface BufferedReaderService {
+public interface MenuReaderService {
     void menuReader(String fileName);
 }
