@@ -1,7 +1,6 @@
 package ru.itsjava.service;
 
 import org.junit.jupiter.api.*;
-import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -17,7 +16,7 @@ public class CoffeeServiceImplTest {
 
     ByteArrayOutputStream output = new ByteArrayOutputStream();
     @MockBean
-    ScannerService scannerService = Mockito.mock(ScannerService.class);
+    ScannerService scannerService;
 
     @Autowired
     CoffeeService coffeeService;
@@ -32,7 +31,7 @@ public class CoffeeServiceImplTest {
     public void shouldHaveCorrectChooseCoffee(){
         when(scannerService.readPrice()).thenReturn(60);
         coffeeService.getCoffeeByPrice();
-        Assertions.assertEquals("Эспрессо", output.toString());
+        Assertions.assertEquals("Ваш выбор: Coffee(name=Эспрессо)\n", output.toString());
     }
 
     @AfterEach
