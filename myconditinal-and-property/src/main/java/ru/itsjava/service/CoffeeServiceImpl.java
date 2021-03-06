@@ -9,9 +9,10 @@ public class CoffeeServiceImpl implements CoffeeService{
     private final MenuReaderService bufferedReaderService;
     private final ScannerService scannerService;
 
+
     @Override
     public void getCoffeeByPrice() {
-        bufferedReaderService.menuReader("/menu.txt");
+        //bufferedReaderService.menuReader("/menu.txt");
         int price = scannerService.readPrice();
         Coffee coffee = null;
         if(price == 60){
